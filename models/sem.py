@@ -75,7 +75,7 @@ class Bottleneck(nn.Module):
         C = planes * 4
         t = int(abs((math.log(C, 2) + b) / gamma))
         k = t if t % 2 else t + 1
-        self.conv = nn.Conv1d(1, 1, kernel_size=k, padding=int(k/2), bias=False)
+        self.conv = nn.Conv1d(1, 1, kernel_size=k, padding=int(k / 2), bias=False)
 
         self.w1 = Parameter(torch.Tensor(1, planes * 4, 1, 1))
         self.b1 = Parameter(torch.Tensor(1, planes * 4, 1, 1))
@@ -111,12 +111,11 @@ class Bottleneck(nn.Module):
         original_out = out
         out = self.GlobalAvg(out)
 
-        # attention module 
+        # attention module
         # switch weight
         weight = out.view(out.size(0), -1)
         weight = self.switch_fc(weight)
         weight = self.sigmoid(weight)
-
 
         # fc
         out1 = out.view(out.size(0), -1)
@@ -138,7 +137,9 @@ class Bottleneck(nn.Module):
         weight3 = weight[:, 2].view(out3.size(0), 1, 1, 1)
         out3 = out3 * weight3
 
-        out = self.sigmoid(out1) * self.sigmoid(out2) * self.sigmoid(out3) * original_out
+        out = (
+            self.sigmoid(out1) * self.sigmoid(out2) * self.sigmoid(out3) * original_out
+        )
 
         out += residual
         out = self.relu(out)
