@@ -14,7 +14,7 @@ import torch.optim as optim
 import torch.utils.data as data
 import torchvision.transforms as transforms
 import torchvision.datasets as datasets
-import models.cifar as models
+import models
 
 from utils import Logger, AverageMeter, accuracy, mkdir_p, savefig
 
@@ -109,9 +109,9 @@ parser.add_argument(
     "--arch",
     "-a",
     metavar="ARCH",
-    default="resnet20",
+    default="sem",
     choices=model_names,
-    help="model architecture: " + " | ".join(model_names) + " (default: resnet18)",
+    help="model architecture: " + " | ".join(model_names) + " (default: sem)",
 )
 parser.add_argument("--depth", type=int, default=29, help="Model depth.")
 parser.add_argument(

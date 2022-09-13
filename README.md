@@ -20,7 +20,7 @@ Python and [PyTorch](http://pytorch.org/).
   ```
 ## Usage
   ```
-CUDA_VISIBLE_DEVICES=0 python run.py --dataset cifar100 --block-name bottleneck --depth 164 --epochs 164 --schedule 81 122 --gamma 0.1 --wd 1e-4
+python run.py --dataset cifar100 --block-name bottleneck --depth 164 --epochs 164 --schedule 81 122 --gamma 0.1 --wd 1e-4
   ```
 
 ## Results
