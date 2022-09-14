@@ -7,7 +7,7 @@ This repository is the implementation of "SEM: Switchable Excitation Module for 
 
 ## Introduction
 
-SPENet is a self-attention module, which can automatically decide to select and integrate attention operators to compute attention maps.  
+SEM is a self-attention module, which can automatically decide to select and integrate attention operators to compute attention maps.  
 
 <p align="center">
   <img src="https://github.com/Qrange-group/SEM/blob/main/images/arch.png" width="600">
