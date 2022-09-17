@@ -3,7 +3,8 @@
 ![GitHub](https://img.shields.io/github/license/gbup-group/DIANet.svg)
 ![GitHub](https://img.shields.io/badge/Qrange%20-group-orange)
 
-This repository is the implementation of "SEM: Switchable Excitation Module for Self-attention Mechanism" [[paper]](https://arxiv.org/abs/?)  on CIFAR-100 and CIFAR-10 datasets. Our paper has been accepted for presentation at ???. You can also check with the [??? proceeding version](???).
+This repository is the implementation of "SEM: Switchable Excitation Module for Self-attention Mechanism" [[paper]](https://arxiv.org/abs/2209.05680)  on CIFAR-100 and CIFAR-10 datasets. 
+
 
 ## Introduction
 
@@ -15,13 +16,13 @@ SEM is a self-attention module, which can automatically decide to select and int
 
 ## Requirement
 Python and [PyTorch](http://pytorch.org/).
-  ```
-  pip install -r requirements.txt
-  ```
+```
+pip install -r requirements.txt
+```
 ## Usage
-  ```
+```
 python run.py --dataset cifar100 --block-name bottleneck --depth 164 --epochs 164 --schedule 81 122 --gamma 0.1 --wd 1e-4
-  ```
+```
 
 ## Results
 |                 |  Dataset  | original |  SEM  |
@@ -34,7 +35,12 @@ python run.py --dataset cifar100 --block-name bottleneck --depth 164 --epochs 16
 ## Citing SEM
 
 ```
-???
+@article{zhong2022switchable,
+  title={Switchable Self-attention Module},
+  author={Zhong, Shanshan and Wen, Wushao and Qin, Jinghui},
+  journal={arXiv preprint arXiv:2209.05680},
+  year={2022}
+}
 ```
 
 ## Acknowledgments
